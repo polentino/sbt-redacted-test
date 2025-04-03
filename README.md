@@ -5,6 +5,17 @@ using [sbt-redacted](https://github.com/polentino/sbt-redacted) plugin
 and [@redacted](https://github.com/polentino/redacted) annotation works for a combination of different JVM, Sbt and
 Scala versions.
 
+## Usage
+
+Open `run_test.sh` and set the version of the plugin that you'd like to test, like so
+
+```shell
+SBT_REDACTED_VERSION="x.y.z.-SNAPSHOT"
+```
+
+Save the file, and then you can run `./run_test.sh` to run the sample project across all jmv/sbt/scala versions in the
+compatibility matrix
+
 ## Compatibility Matrix
 
 | JVM  |    Sbt    |   Scala   |

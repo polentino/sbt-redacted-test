@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 ARG JVM_VERSION
 ARG SCALA_VERSION
 ARG SBT_VERSION
+ARG SBT_REDACTED_PLUGIN_VERSION
 
 # Install necessary dependencies
 RUN apt-get update && apt-get install -y \
@@ -25,3 +26,4 @@ WORKDIR /app
 # Override Scala & Sbt version
 RUN echo "ThisBuild / scalaVersion := \"${SCALA_VERSION}\"" > version.sbt
 RUN mkdir -p /app/project &&  echo "sbt.version = ${SBT_VERSION}" > ./project/build.properties
+RUN mkdir -p /app/project &&  echo "addSbtPlugin(\"io.github.polentino\" % \"sbt-redacted\" % \"${SBT_REDACTED_PLUGIN_VERSION}\")" > ./project/plugins.sbt

@@ -5,6 +5,7 @@ services:
       args:
         JVM_VERSION: ${JVM_VERSION}
         SCALA_VERSION: ${SCALA_VERSION}
+        SBT_REDACTED_PLUGIN_VERSION: ${SBT_REDACTED_PLUGIN_VERSION}
         SBT_VERSION: ${SBT_VERSION}
     volumes:
       - .:/app
