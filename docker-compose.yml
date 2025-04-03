@@ -1,0 +1,16 @@
+services:
+  sbt_runner:
+    build:
+      context: .
+      args:
+        JVM_VERSION: ${JVM_VERSION}
+        SCALA_VERSION: ${SCALA_VERSION}
+        SBT_VERSION: ${SBT_VERSION}
+    volumes:
+      - .:/app
+      - ~/.ivy2:/root/.ivy2
+      - ~/.m2:/root/.m2
+      - ~/.sbt:/root/.sbt
+      - ~/.coursier:/root/.coursier
+    working_dir: /app
+    command: ["sbt", "run"]

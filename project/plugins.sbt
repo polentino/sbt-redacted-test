@@ -1,0 +1,1 @@
+addSbtPlugin("io.github.polentino" % "sbt-redacted" % "0.1.0-SNAPSHOT")
